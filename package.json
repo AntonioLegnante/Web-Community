@@ -1,0 +1,27 @@
+{
+  "name": "Web-Community",
+  "version": "1.0.0",
+  "description": "prova esami di stato 2015 (sono un fallito)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioLegnante/Web-Community.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonioLegnante/Web-Community/issues"
+  },
+  "homepage": "https://github.com/AntonioLegnante/Web-Community#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "sqlite3": "^4.1.1"
+  }
+}
