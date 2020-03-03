@@ -26,7 +26,7 @@ CREATE TABLE Eventi
     FOREIGN KEY (id_Utenti) REFERENCES Utenti(id_Utenti)
 );
 
-INSERT INTO Eventi(Titolo, dataevento, Luogo, provincia) VALUES ("Mandragola", DATE(2020-03-13), "Napoli", "Napoli");
+INSERT INTO Eventi(Titolo, dataevento, Luogo, provincia) VALUES ("Mandragola", DATE('2018-11-01'), "Napoli", "Napoli");
 
 DROP TABLE IF EXISTS Commenti;
 CREATE TABLE Commenti
@@ -72,3 +72,4 @@ INSERT INTO ImpiegoArtisti (id_Artisti, id_Evento) VALUES (1, 1);
 
 SELECT E.Titolo, A.nome FROM Eventi E INNER JOIN ImpiegoArtisti I INNER JOIN Artisti A WHERE E.id_Evento = I.id_Evento AND A.id_Artisti = I.id_Artisti;
 SELECT E.Titolo, U.nome, U.Cognome, C.Commento FROM Utenti U INNER JOIN Commenti C INNER JOIN EVENTI E WHERE U.id_Utenti = C.id_Utenti AND E.id_Evento = C.id_Evento;
+SELECT * FROM Eventi;
