@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Utenti;
 CREATE TABLE Utenti
 (
     id_Utenti INTEGER PRIMARY KEY,
-    Nickname TEXT,
+    Nickname TEXT UNIQUE,
     Nome TEXT,
     Cognome TEXT NOT NULL,
     email TEXT,
@@ -26,14 +26,14 @@ CREATE TABLE Eventi
     FOREIGN KEY (id_Utenti) REFERENCES Utenti(id_Utenti)
 );
 
-INSERT INTO Eventi(Titolo, dataevento, Luogo, provincia) VALUES ("Mandragola", DATE('2018-11-01'), "Napoli", "Napoli");
+INSERT INTO Eventi(Titolo, dataevento, Luogo, provincia) VALUES ("Mandragola", DATE('2020-03-13'), "Napoli", "Napoli");
 
 DROP TABLE IF EXISTS Commenti;
 CREATE TABLE Commenti
 (
     id_Utenti INTEGER PRIMARY KEY,
     id_Evento INTEGER NOT NULL,
-    Voto INTEGER(1),
+    Voto INTEGER CHECK (Voto > 0 AND Voto < 6),
     Commento TEXT
 );
 

@@ -19,6 +19,16 @@ app.get("/", function(req,res){
     });
 });
 
+app.get("/registrazione", function(req,res){
+    res.render("Registrazione");
+});
+
+app.post("/rig", function(req,res){
+    const sql = ("INSERT INTO Utenti (Nickname, Nome, Cognome, email, provincia) VALUES (?, ?, ?, ?, ?);"
+    db.run(sql, [req.body.Nickname, req.body.Nome, req.body.Cognome, req.body.email, req.body.provincia], function(){
+        res.redirect("/");
+    });
+});
 app.use(function(req,res){
     res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
 });
