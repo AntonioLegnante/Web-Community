@@ -25,7 +25,7 @@ app.get("/registrazione", function(req,res){
 
 app.post("/rig", function(req,res){
     const sql = ("INSERT INTO Utenti (Nickname, Nome, Cognome, email, provincia) VALUES (?, ?, ?, ?, ?);"
-    db.run(sql, [req.body.Nickname, req.body.Nome, req.body.Cognome, req.body.email, req.body.provincia], function(){
+    db.run(sql, [req.body.Nickname, req.body.Cognome, req.body.pass], function(){
         res.redirect("/");
     });
 });

@@ -8,11 +8,12 @@ CREATE TABLE Utenti
     Nickname TEXT UNIQUE,
     Nome TEXT,
     Cognome TEXT NOT NULL,
+    pass TEXT NOT NULL,
     email TEXT,
     provincia TEXT
 );
 
-INSERT INTO Utenti(Nickname, Nome, Cognome, email, provincia) VALUES ("Antonio12fallito", "Antonio", "Legnante", "AntonioLegnante12@gmail.com", "Napoli");
+INSERT INTO Utenti(Nickname, Nome, Cognome, pass, email, provincia) VALUES ("Antonio12fallito", "Antonio", "Legnante", "1234", "AntonioLegnante12@gmail.com", "Napoli");
 
 DROP TABLE IF EXISTS Eventi;
 CREATE TABLE Eventi
